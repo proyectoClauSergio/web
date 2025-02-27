@@ -1,0 +1,321 @@
+/* Estilos base y variables */
+:root {
+    --color-primario: #2563eb;
+    --color-primario-hover: #1d4ed8;
+    --color-secundario: #60a5fa;
+    --fondo: #f8fafc;
+    --texto: #1e293b;
+    --texto-claro: #64748b;
+    --exito: #22c55e;
+    --peligro: #ef4444;
+    --borde: #e2e8f0;
+    --sombra: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--fondo);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+/* Páginas de Autenticación */
+.contenedor-autenticacion {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    padding: 2rem;
+}
+
+.tarjeta-autenticacion {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--sombra);
+    width: 100%;
+    max-width: 440px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+    .tarjeta-autenticacion:hover {
+        transform: translateY(-5px);
+    }
+
+.encabezado-autenticacion {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-autenticacion {
+    width: 80px;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Panel de Control */
+.contenedor-panel {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+}
+
+.barra-lateral {
+    background: white;
+    border-right: 1px solid var(--borde);
+    padding: 1.5rem;
+    position: fixed;
+    width: 240px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contenido-principal {
+    margin-left: 240px;
+    padding: 2rem;
+    background: var(--fondo);
+    min-height: 100vh;
+}
+
+/* Componentes modernos */
+.grupo-input {
+    margin-bottom: 1.2rem;
+}
+
+.etiqueta-input {
+    display: block;
+    margin-bottom: 0.75rem; 
+    color: var(--texto-claro);
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.campo-input {
+    width: 100%;
+    padding: 1.25rem 1.5rem; 
+    border: 2px solid var(--borde);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    font-size: 1.25rem; 
+}
+
+    .campo-input:focus {
+        border-color: var(--color-primario);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        outline: none;
+    }
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.boton-primario {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-primario-hover));
+    color: white;
+    box-shadow: var(--sombra);
+    padding: 1.25rem 2rem; 
+    font-size: 1.25rem; 
+}
+
+    .boton-primario:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+    }
+
+/* Tabla moderna */
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+    .tabla-datos th,
+    .tabla-datos td {
+        padding: 1rem 1.5rem;
+        text-align: left;
+        border-bottom: 1px solid var(--borde);
+    }
+
+    .tabla-datos th {
+        background: var(--fondo);
+        font-weight: 600;
+    }
+
+    .tabla-datos tr:last-child td {
+        border-bottom: none;
+    }
+
+/* Tarjetas de métricas */
+.tarjeta-metrica {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--sombra);
+}
+
+/* Estilos para los campos de entrada grandes */
+.campo-grande {
+    padding: 1rem 1.5rem; /* Aumenta el padding para hacer los campos más grandes */
+    font-size: 1.1rem; /* Aumenta el tamaño de la fuente */
+    border-radius: 0.75rem; /* Mantén el borde redondeado */
+    border: 2px solid var(--borde); /* Borde más grueso */
+}
+
+.formulario-pruebas {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+}
+
+.formulario-pruebas .grupo-input {
+    margin-bottom: 2rem;
+}
+
+.formulario-pruebas .etiqueta-input {
+    font-size: 1.25rem; 
+    margin-bottom: 1rem;
+}
+
+.formulario-pruebas .boton-primario {
+    padding: 1.25rem 2rem; 
+    font-size: 1.25rem; 
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animacion-entrada {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Barra lateral mejorada */
+.enlace-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    color: var(--texto-claro);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+    .enlace-navegacion:hover {
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--color-primario);
+    }
+
+    .enlace-navegacion.activo {
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--color-primario);
+        font-weight: 600;
+    }
+
+/* Nueva página de inicio */
+.seccion-bienvenida {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tarjetas-caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tarjeta-caracteristica {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease;
+}
+
+    .tarjeta-caracteristica:hover {
+        transform: translateY(-5px);
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenido-principal {
+        padding: 2rem 1rem;
+        margin-left: 0;
+    }
+
+    .barra-lateral {
+        display: none; /* Ocultar barra lateral en móviles */
+    }
+}
+
+/* Nuevos estilos añadidos */
+.ancho-completo {
+    width: 100%;
+}
+
+.margen-superior {
+    margin-top: 0.5rem;
+}
+
+.margen-superior-2 {
+    margin-top: 1rem;
+}
+
+.margen-inferior {
+    margin-bottom: 1rem;
+}
+
+.texto-destacado {
+    color: var(--texto-claro);
+    margin-top: 0.5rem;
+}
+
+.icono-grande {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.placeholder-mapa {
+    min-height: 400px;
+    background: var(--fondo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--texto-claro);
+    border-radius: 1rem;
+}
